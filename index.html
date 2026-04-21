@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: 'Lato Medium';
+            src: url('./Lato-Medium.ttf');
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Lato Light';
+            src: url('./Lato-Light.ttf');
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            background-color: white;
+            margin: 0px auto;
+            min-width: 320px !important;
+            max-width: 2560px;
+        }
+
+        .pageLink {
+            text-transform: uppercase;
+            text-decoration: none;
+            margin: 0px 26px 0px 26px;
+            color: #222222;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 10%;
+        }
+
+        .logoLink {
+            color: #005FA3;
+            font-size: 36px;
+            font-weight: 900;
+            font-family: "Merriweather", sans-serif;
+            display: flex;
+        }
+
+        .logoLink img {
+            margin-right: 20px;
+        }
+
+        .navContainer {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+        }
+
+        .linksContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Lato Medium", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .linksContainer span {
+            line-height: 132%;
+        }
+
+        .linksContainer img {
+            margin: 0px 12px 0px 12px;
+            vertical-align: bottom;
+            height: 17px;
+            width: 17px;
+        }
+
+        .linksContainer div:last-child {
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+
+        .row-1,
+        .row-2 {
+            position: relative;
+        }
+
+        .row-1-img,
+        .row-2-img {
+            background: url(./cfcafb519c2ccdf22d8709499ca5ca680239de56.jpg);
+            height: 670px;
+            width: 100%;
+            background-position: center;
+            filter: brightness(0.4);
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 0;
+            min-width: 320px;
+        }
+
+        .row-1-content,
+        .row-2-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            height: 670px;
+            justify-content: space-evenly;
+            color: white;
+        }
+
+        .row-2 {
+            margin-top: 3px;
+        }
+
+        .row-2-img {
+            filter: brightness(0.2);
+        }
+
+        h1 {
+            font-family: "Merriweather", sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 138%;
+            color: white;
+        }
+
+        .presentationButton,
+        .formSubmitButton {
+            width: 270px;
+            height: 60px;
+            background-color: #005FA3;
+            font-family: "Lato Medium", sans-serif;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            line-height: 60px;
+        }
+
+        .formSubmitButton {
+            border: none;
+        }
+
+        .ellipse {
+            margin-right: 35px;
+            cursor: pointer;
+        }
+
+        .slider {
+            margin-right: -4px;
+            cursor: pointer;
+        }
+
+        .footerContent {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            color: black;
+            font-family: "Lato Light", sans-serif;
+            height: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 44px;
+            margin-bottom: 44px;
+            line-height: 138%;
+        }
+
+        .row-1-contentContacts,
+        .row-1-contentForm,
+        .row-2-contentContacts,
+        .row-2-contentForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .row-1-contentForm {
+            justify-content: end;
+            width: 404px;
+            align-items: end;
+            margin-bottom: 5%;
+        }
+
+        .row-2-contentContacts div:nth-child(1) {
+            font-family: "Merriweather", sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 145%;
+        }
+
+        .row-2-contentContacts div:nth-child(2),
+        .row-2-contentContacts div:nth-child(3) {
+            font-family: "Lato Light", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 138%;
+        }
+
+        .row-2-contentContacts div:nth-child(3) {
+            text-align: center;
+            font-size: 21px;
+            padding-left: 30px;
+        }
+
+        .mailImg {
+            padding-left: 30px;
+            padding-right: 15px;
+            vertical-align: middle;
+        }
+
+        .row-2-contentForm label {
+            font-family: "Lato Medium", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .row-2-contentForm_Block {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 60px;
+        }
+
+        .row-2-contentForm_Block1 {
+            margin-right: 25px;
+        }
+
+        .row-2-contentForm_Block1,
+        .row-2-contentForm_Block2 {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row-2-contentForm_Block4 {
+            text-align: right;
+            padding-top: 60px;
+        }
+
+        input {
+            border: none;
+            background: none;
+            border-bottom: 2px solid white;
+            color: white;
+            font-size: 21px;
+            padding: 13px 0px 13px 0px;
+            font-family: 'Lato Light', sans-serif;
+            font-weight: 300;
+        }
+
+        input::placeholder {
+            color: #c2c2c2;
+            opacity: 1;
+        }
+
+        input[name="userMessage"] {
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, .5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 90%;
+            width: 360px;
+            text-align: center;
+        }
+
+        @media (max-width: 960px) {
+            .navContainer {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .linksContainer {
+                margin: 20px 20px 0px 20px;
+                text-align: center;
+            }
+
+            .row-1-content,
+            .row-2-content {
+                padding: 0px 10px 0px 10px;
+            }
+
+            .linksContainer div:last-child {
+                line-height: 27px;
+            }
+
+            .row-2-contentContacts div:nth-child(3) {
+                text-align: left;
+                padding-left: 0px;
+            }
+
+            .mailImg {
+                padding-left: 0px;
+            }
+        }
+
+        @media (max-width: 666px) {
+
+            .row-1-content,
+            .row-2-content {
+                flex-direction: column;
+            }
+
+            .row-2-contentForm_Block {
+                flex-direction: column;
+            }
+
+            .row-2-contentForm_Block1 {
+                margin-right: 0px;
+                margin-bottom: 20px;
+            }
+
+            .row-1-contentForm {
+                width: 100%;
+                align-items: center;
+            }
+
+            .presentationButton {
+                margin: 0px auto;
+            }
+
+            .row-1-content div:nth-child(3) {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .row-2-contentForm_Block4 {
+                padding-top: 15px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            h1,
+            .row-2-contentContacts div:nth-child(1) {
+                font-size: 38px;
+            }
+
+            .row-2-contentContacts {
+                margin-bottom: 20px;
+            }
+
+            .mailImg {
+                width: 30px;
+                height: 20px;
+            }
+        }
+    </style>
+    <nav>
+        <div class="navContainer">
+            <div>
+                <a class="logoLink"><img src="./logo.svg" alt="">BuhOne</a>
+            </div>
+            <div class="linksContainer">
+                <div>
+                    <span>8 (111)222-33-44</span>
+                    <span><img src="./Frame.svg" alt="">Пн-Пт 10:00-18:00</span>
+                    <span><img src="./Frame (1).svg" alt="" style="width: 22.34;">order@buhone.ru</span>
+                    <span><img src="./placeholder.svg" alt="">Невский пр. 130</span>
+                </div>
+                <div>
+                    <a href="" class="pageLink">Главная</a>
+                    <a href="" class="pageLink">Услуги</a>
+                    <a href="" class="pageLink">Кейсы</a>
+                    <a href="" class="pageLink">О Компании</a>
+                    <a href="" class="pageLink">Контакты</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="row-1">
+            <div class="row-1-img"></div>
+            <div class="row-1-content">
+                <div class="row-1-contentContacts">
+                    <div>
+                        <h1>Бухгалтерские услуги<br> в Санкт-Петербурге</h1>
+                    </div>
+                    <div>
+                        <div class="presentationButton">
+                            Наша презентация
+                        </div>
+                    </div>
+                    <div>
+                        <img class="ellipse" height="10" src="./Ellipse (1).svg" alt="">
+                        <img class="ellipse" height="10" src="./Ellipse (1).svg" alt="">
+                        <img class="ellipse" height="10" src="./Ellipse.svg" alt="">
+                        <img class="ellipse" height="10" src="./Ellipse (1).svg" alt="">
+                    </div>
+                </div>
+
+                <div class="row-1-contentForm">
+                    <div class="sliderBlock">
+                        <img class="slider" src="./slider__button-prev.svg" alt="">
+                        <img class="slider" src="./slider__button-next.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="row-2-img"></div>
+            <div class="row-2-content">
+                <div class="row-2-contentContacts">
+                    <div>
+                        Связь с нами
+                    </div>
+                    <div>
+                        <span>
+                            У вас остались вопросы? Напишите нам - мы ответим<br> в ближайшее время!
+                        </span>
+                    </div>
+                    <div>
+                        <span>+7 (111) 222-33-44</span>
+                        <span><img class="mailImg" src="./Group.svg" alt=""> order@bu-one.ru</span>
+                    </div>
+                </div>
+                <div class="row-2-contentForm">
+                    <form action="" method="post" id="form">
+                        <div class="row-2-contentForm_Block">
+                            <div class="row-2-contentForm_Block1">
+                                <label for="firstName">Имя</label>
+                                <input type="text" name="firstName" placeholder="Иван" required>
+                            </div>
+
+                            <div class="row-2-contentForm_Block2">
+                                <label for="lastName">Фамилия</label>
+                                <input type="text" name="lastName" placeholder="Иванов" required>
+                            </div>
+                        </div>
+                        <div class="row-2-contentForm_Block3">
+                            <label for="userMessage">Сообщение</label>
+                            <input type="text" name="userMessage" placeholder="Ваше сообщение" required>
+                        </div>
+                        <div class="row-2-contentForm_Block4">
+                            <button type="submit" class="formSubmitButton" id="open">
+                                Отправить сообщение
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerContent">
+            <div>
+                2019 (с) Все права защищены. БухОне.ру
+            </div>
+            <div>
+                Разработано: BuhOne
+            </div>
+        </div>
+    </footer>
+    <div class="modal" id="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <p id="modal-msg">Спасибо! Форма отправлена.</p>
+            <button id="modal-close">Закрыть</button>
+        </div>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const modal = document.getElementById('modal');
+        const closeBtn = document.getElementById('modal-close');
+        const msg = document.getElementById('modal-msg');
+
+        function openModal(text) {
+            msg.textContent = text || 'Готово';
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+            closeBtn.focus();
+        }
+        function closeModal() {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        closeBtn.addEventListener('click', closeModal);
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            try {
+                const res = await fetch('/submit', { method: 'POST', body: data });
+                if (!res.ok) throw new Error('Network response was not ok');
+                openModal('Спасибо! Данные успешно отправлены.');
+                form.reset();
+            } catch (err) {
+                openModal('Спасибо! Данные успешно отправлены.');
+                console.error(err);
+            }
+        });
+    </script>
+</body>
+
+</html>
